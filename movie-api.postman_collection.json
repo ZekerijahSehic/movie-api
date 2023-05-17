@@ -1,0 +1,907 @@
+{
+	"info": {
+		"_postman_id": "225779b2-404f-4585-8097-e71cb421f51b",
+		"name": "movie-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12808321"
+	},
+	"item": [
+		{
+			"name": "Login-Logout-Register",
+			"item": [
+				{
+					"name": "http://localhost:8000/api/register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "'Bearer' . $accessToken"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "testUser",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "test@user.net",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "default"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/register"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "default"
+								}
+							]
+						},
+						"url": "localhost:8000/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "http://localhost:8000/api/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "http://localhost:8000/api/users/slug/favorite",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|SvzC4JIcie9bUTEjhU4bFhTWXq6kszDbep01YnwM"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"description": "User is recognized automatically",
+									"type": "default"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/users/admin/favorites"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/users/index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "http://localhost:8000/api/users/index"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/users/get/slug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": "http://localhost:8000/api/users/get/batman"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/users/update/slug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "default"
+								},
+								{
+									"key": "username",
+									"value": "Superman",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "superman@world.com",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/update/batman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"update",
+								"batman"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/users/delete/slug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "DELETE",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/users/delete/joker"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "http://localhost:8000/api/movies/index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/movies/index"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/movies/get/slug",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "http://localhost:8000/api/movies/get/deset-u-pola"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/movies/update/slug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|nL7thTi6tkXFDmpMcLO56mr2HOEOukhV5MAj4rQj"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "default"
+								},
+								{
+									"key": "title",
+									"value": "Deset u pola",
+									"type": "default"
+								},
+								{
+									"key": "release_year",
+									"value": "2022",
+									"type": "default"
+								},
+								{
+									"key": "duration_minutes",
+									"value": "120",
+									"type": "default"
+								},
+								{
+									"key": "plot_summary",
+									"value": "Ovo nije samo prica o cev...",
+									"type": "default"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/movies/update/deset-u-pola"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/movies/delete/slug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|nL7thTi6tkXFDmpMcLO56mr2HOEOukhV5MAj4rQj"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8000/api/movies/delete/zlatna-dolina"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/movies/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|nL7thTi6tkXFDmpMcLO56mr2HOEOukhV5MAj4rQj"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New Movie",
+									"type": "default"
+								},
+								{
+									"key": "release_year",
+									"value": "2022",
+									"type": "default"
+								},
+								{
+									"key": "duration_minutes",
+									"value": "120",
+									"type": "default"
+								},
+								{
+									"key": "plot_summary",
+									"value": "It started as...",
+									"type": "default"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/movies/create"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/movies/slug/posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|a8vyKriDILN87vLnQSf50LWjDVoBNyS3HLGpqQNg"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "magnam",
+									"type": "default"
+								},
+								{
+									"key": "body",
+									"value": "Reprehenderit odio",
+									"type": "default"
+								},
+								{
+									"key": "image_id",
+									"value": "7",
+									"type": "default"
+								},
+								{
+									"key": "director",
+									"value": "Sadye Hirthe",
+									"type": "default"
+								},
+								{
+									"key": "slug",
+									"value": "non-vitae-voluptas-voluptate-nostrum-explicabo",
+									"type": "default"
+								},
+								{
+									"key": "added_by_id",
+									"value": "9",
+									"type": "default"
+								},
+								{
+									"key": "posts",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "author",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "pagination",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/movies/deset-u-pola/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/movies/slug/favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|SvzC4JIcie9bUTEjhU4bFhTWXq6kszDbep01YnwM"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "http://localhost:8000/api/movies/deset-u-pola/favorite"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/movies/by/slug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/movies/by/admin"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/api/movies/index?pagination=5",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/movies/index?pagination=5",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"index"
+							],
+							"query": [
+								{
+									"key": "pagination",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/api/movies/index?release_year=2022",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/movies/index?release_year=2022",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"index"
+							],
+							"query": [
+								{
+									"key": "release_year",
+									"value": "2022"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "http://localhost:8000/api/posts/get/slug",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "http://localhost:8000/api/posts/get/deset-u-pola-2022"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/posts/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|a8vyKriDILN87vLnQSf50LWjDVoBNyS3HLGpqQNg"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New Review",
+									"type": "default"
+								},
+								{
+									"key": "review",
+									"value": "New Post Review",
+									"type": "default"
+								},
+								{
+									"key": "rate",
+									"value": "10",
+									"type": "default"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "movie_id",
+									"value": "4",
+									"type": "default"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/posts/create"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/posts/index",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": "http://localhost:8000/api/posts/index"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/posts/delete/slug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": "http://localhost:8000/api/posts/delete/zlatna-dolina-2008"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/posts/update/slug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "default"
+								},
+								{
+									"key": "title",
+									"value": "Deset u pola 2022",
+									"type": "default"
+								},
+								{
+									"key": "review",
+									"value": "Ovo prica krece sto...",
+									"type": "default"
+								},
+								{
+									"key": "rate",
+									"value": "9.9",
+									"type": "default"
+								},
+								{
+									"key": "movie_id",
+									"value": "11",
+									"type": "default"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/posts/update/deset-u-pola-2022"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/api/posts/by/userSlug",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New Post",
+									"type": "default"
+								},
+								{
+									"key": "subtitle",
+									"value": "New Post Subtitle",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "New Post Description",
+									"type": "default"
+								},
+								{
+									"key": "body",
+									"value": "New Post Body",
+									"type": "default"
+								},
+								{
+									"key": "movie_id",
+									"value": "4",
+									"type": "default"
+								},
+								{
+									"key": "movie",
+									"value": "1",
+									"description": "boolean value",
+									"type": "default"
+								},
+								{
+									"key": "author",
+									"value": "1",
+									"description": "boolean value",
+									"type": "default"
+								},
+								{
+									"key": "pagination",
+									"value": "3",
+									"type": "default"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/posts/by/admin"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
