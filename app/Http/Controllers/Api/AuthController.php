@@ -22,6 +22,7 @@ class AuthController extends Controller {
     public function register(AddUserRequest $request): JsonResponse {
         $request->merge(['role_id' => Role::USER]);
         $user = $this->userRepository->createUser($request->all());
+        $user->sendEmailVerificationNotification();
         return response()->json($user);
     }
 
