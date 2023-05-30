@@ -57,6 +57,8 @@ Route::prefix('users')->group(function () {
     Route::get('/{user:slug}/favorites', [UserController::class, 'favorites'])->middleware('auth:sanctum');
 });
 
+Route::get('email/verify/{id}', [VerificationController::class, 'verify'])->name('verification.verify'); 
+Route::get('email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
 
 
 
